@@ -27,7 +27,7 @@ app.get('*', function(req, res) {
 					socket.emit("join", "'+req.url+'"); \
 				}); \
 				socket.on("notifications",function(data) { \
-				  $.jGrowl(JSON.stringify(data)); \
+				  $.jGrowl(data.resource); \
 				}); \
 			</script> \
 			<style type="text/css"> \
