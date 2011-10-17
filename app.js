@@ -27,7 +27,7 @@ app.get('*', function(req, res) {
 					socket.emit("join", "'+req.url+'"); \
 				}); \
 				socket.on("notifications",function(data) { \
-				  $.jGrowl(data.resource); \
+				  $.jGrowl("recurso:" + data.resource + "\nModificado hace: " +((new Date()-data.sent)/1000) + "s"); \
 				}); \
 			</script> \
 			<style type="text/css"> \
