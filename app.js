@@ -23,11 +23,11 @@ app.get('*', function(req, res) {
 			<script type="text/javascript" src="/jgrowl/jquery.jgrowl.js"></script> \
 			<script type="text/javascript"> \
 				var socket = io.connect("ec2-107-22-31-208.compute-1.amazonaws.com"); 		 \
-        socket.on("connect", function() { \
+                socket.on("connect", function() { \
 					socket.emit("join", "'+req.url+'"); \
 				}); \
 				socket.on("notifications",function(data) { \
-				  $.jGrowl("recurso:" + data.resource + "\nModificado hace: " +((new Date()-data.sent)/1000) + "s"); \
+				  $.jGrowl(JSON.stringify(data)); \
 				}); \
 			</script> \
 			<style type="text/css"> \
